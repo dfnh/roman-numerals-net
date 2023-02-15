@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("roman-numerals-net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("roman-numerals")]
+[assembly: AssemblyDescription("practice your skills in converting roman numerals")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("roman-numerals-net")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyProduct("roman-numerals")]
+[assembly: AssemblyCopyright("Copyright © me:) 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

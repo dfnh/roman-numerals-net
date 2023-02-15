@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_message = new System.Windows.Forms.Label();
@@ -36,10 +37,10 @@
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_check = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_number = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label_score = new System.Windows.Forms.Label();
-            this.label_number = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +130,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 73);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
+            // label_number
+            // 
+            this.label_number.AutoSize = true;
+            this.label_number.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_number.Location = new System.Drawing.Point(114, 36);
+            this.label_number.Name = "label_number";
+            this.label_number.Size = new System.Drawing.Size(221, 37);
+            this.label_number.TabIndex = 18;
+            this.label_number.Text = "number here";
+            this.label_number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -164,17 +176,6 @@
             this.label_score.Text = "score here";
             this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_number
-            // 
-            this.label_number.AutoSize = true;
-            this.label_number.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_number.Location = new System.Drawing.Point(114, 36);
-            this.label_number.Name = "label_number";
-            this.label_number.Size = new System.Drawing.Size(221, 37);
-            this.label_number.TabIndex = 18;
-            this.label_number.Text = "number here";
-            this.label_number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // PracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -191,6 +192,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
