@@ -33,8 +33,8 @@
             this.label_message = new System.Windows.Forms.Label();
             this.textBox_roman = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.btn_check = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,23 +92,25 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Roman Numerals";
             // 
-            // button1
+            // btn_next
             // 
-            this.button1.Location = new System.Drawing.Point(241, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 43);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_next.Location = new System.Drawing.Point(241, 323);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(112, 43);
+            this.btn_next.TabIndex = 12;
+            this.btn_next.Text = "Next";
+            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
-            // button2
+            // btn_check
             // 
-            this.button2.Location = new System.Drawing.Point(99, 323);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 43);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Check";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_check.Location = new System.Drawing.Point(99, 323);
+            this.btn_check.Name = "btn_check";
+            this.btn_check.Size = new System.Drawing.Size(112, 43);
+            this.btn_check.TabIndex = 13;
+            this.btn_check.Text = "Check";
+            this.btn_check.UseVisualStyleBackColor = true;
+            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -179,8 +181,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 378);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_check);
+            this.Controls.Add(this.btn_next);
             this.Controls.Add(this.label_message);
             this.Controls.Add(this.textBox_roman);
             this.Controls.Add(this.label3);
@@ -199,6 +201,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Practice";
+            this.Load += new System.EventHandler(this.PracticeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -213,8 +216,8 @@
         private System.Windows.Forms.Label label_message;
         private System.Windows.Forms.TextBox textBox_roman;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Button btn_check;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_number;
         private System.Windows.Forms.Label label4;
