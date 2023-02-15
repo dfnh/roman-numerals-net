@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using roman_numerals_net.Forms;
 
@@ -18,7 +17,6 @@ namespace roman_numerals_net
             {
                 if (e.KeyValue == (char)Keys.Enter)
                 {
-                    //e.Handled = true;
                     e.SuppressKeyPress = true; // to disable bing sound
                     button1.PerformClick();
                 }
@@ -51,7 +49,6 @@ namespace roman_numerals_net
 
             if (!success)
             {
-                //MessageBox.Show($"{result.errorMessage}", "error");
                 SetErrorLabel(errorMessage);
                 SetResultTxt("0");
                 return;
