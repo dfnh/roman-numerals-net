@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace roman_numerals_net
@@ -16,7 +14,17 @@ namespace roman_numerals_net
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ThreadException += new ThreadExceptionEventHandler(GlobalException);
             Application.Run(new Form1());
+        }
+
+        private static void GlobalException(object sender, ThreadExceptionEventArgs e)
+        {
+#if DEBUG
+            MessageBox.Show(e.Exception.ToString(), "error occurred");
+#else
+            MessageBox.Show(e.Exception?.Message.ToString() ?? "some error", "error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+#endif
         }
     }
 }
