@@ -32,16 +32,33 @@ namespace roman_numerals_net
 
         private void CorrectRomanTxt(int number)
         {
+            textBox_roman.Text = RomanNumerals.ToRoman(number);
             textBox_roman.Select(textBox_roman.Text.Length, 0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            textBox_roman.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // converting
+            string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");
+
+            var (success, number, errorMessage) = RomanNumerals.ToIntSafe(romanStr);
+
+            if (!success)
+            {
+                //MessageBox.Show($"{result.errorMessage}", "error");
+                SetErrorLabel(errorMessage);
+                SetResultTxt("0");
+                return;
+            }
+
+            SetErrorLabel();
+            SetResultTxt(number.ToString());
+            CorrectRomanTxt(number);
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
