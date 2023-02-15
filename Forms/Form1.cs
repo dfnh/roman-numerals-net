@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using roman_numerals_net.Forms;
 
 namespace roman_numerals_net
 {
@@ -63,6 +64,7 @@ namespace roman_numerals_net
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Ext.OpenOnlyOneForm<HelpForm>();
         }
 
         private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
