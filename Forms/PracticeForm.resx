@@ -117,14 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Roman numerals are a numeral system that originated in ancient Rome and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages. Numbers are written with combinations of letters from the Latin alphabet, each letter with a fixed integer value, modern style uses only these seven:</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Rules:
-1. If one or more symbols are placed after another letter of greater value, add that amount.
-VIII = 8 (5 + 3 = 8)
-2. If a symbol is placed before another letter of greater value, subtract that amount.
-CM = 900 (1000 – 100 = 900)</value>
-  </data>
 </root>

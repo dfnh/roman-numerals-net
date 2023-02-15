@@ -69,6 +69,7 @@ namespace roman_numerals_net
 
         private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Ext.OpenOnlyOneForm<PracticeForm>();
         }
     }
 }
