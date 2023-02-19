@@ -81,14 +81,14 @@
             this.practiceToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(582, 28);
             this.menuStrip1.TabIndex = 5;
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.helpToolStripMenuItem.Text = "help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -96,7 +96,7 @@
             // 
             this.practiceToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.practiceToolStripMenuItem.Text = "practice";
             this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
             // 
@@ -134,7 +134,7 @@
             // btn_convert
             // 
             this.btn_convert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.btn_convert.BorderRadius = 16;
+            this.btn_convert.BorderRadius = 10;
             this.btn_convert.FlatAppearance.BorderSize = 0;
             this.btn_convert.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
             this.btn_convert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
