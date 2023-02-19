@@ -9,10 +9,7 @@ namespace roman_numerals_net
     {
         public static void OpenOnlyOneForm<T>() where T : Form, new()
         {
-            if (!Application.OpenForms.OfType<T>().Any())
-            {
-                new T().Show();
-            }
+            if (!Application.OpenForms.OfType<T>().Any()) new T().Show();
         }
 
         public static void Cmd(string line)

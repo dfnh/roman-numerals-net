@@ -18,7 +18,7 @@ namespace roman_numerals_net
             Application.Run(new Form1());
         }
 
-        private static void GlobalException(object sender, ThreadExceptionEventArgs e)
+        static void GlobalException(object s, ThreadExceptionEventArgs e)
         {
 #if DEBUG
             MessageBox.Show(e.Exception.ToString(), "error occurred");

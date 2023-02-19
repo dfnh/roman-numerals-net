@@ -25,22 +25,22 @@ namespace roman_numerals_net
             textBox_roman.KeyUp += (s, e) => { if (textBox_roman.Text.Length == 0) SetErrorLabel(); };
         }
 
-        private void SetErrorLabel(string message = "") => label_error.Text = message;
+        void SetErrorLabel(string message = "") => label_error.Text = message;
 
-        private void SetResultTxt(string result) => textBox_result.Text = result;
+        void SetResultTxt(string result) => textBox_result.Text = result;
 
-        private void CorrectRomanTxt(int number)
+        void CorrectRomanTxt(int number)
         {
             textBox_roman.Text = RomanNumerals.ToRoman(number);
             textBox_roman.Select(textBox_roman.Text.Length, 0);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        void Form1_Load(object s, EventArgs e)
         {
             textBox_roman.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void button1_Click(object s, EventArgs e)
         {
             // converting
             string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");
@@ -59,12 +59,12 @@ namespace roman_numerals_net
             CorrectRomanTxt(number);
         }
 
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        void helpToolStripMenuItem_Click(object s, EventArgs e)
         {
             Ext.OpenOnlyOneForm<HelpForm>();
         }
 
-        private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
+        void practiceToolStripMenuItem_Click(object s, EventArgs e)
         {
             Ext.OpenOnlyOneForm<PracticeForm>();
         }

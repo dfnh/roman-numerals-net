@@ -14,6 +14,15 @@ namespace roman_numerals_net.Forms
             label_number.Text = "";
             label_message.Text = "";
 
+            #region exit button
+
+            Button btn_exit = new Button() { Size = new Size(0, 0), TabStop = false };
+            btn_exit.Click += (s, e) => Close();
+            Controls.Add(btn_exit);
+            CancelButton = btn_exit;
+
+            #endregion exit button
+
             KeyPreview = true;
             KeyDown += (s, e) =>
             {
@@ -33,34 +42,34 @@ namespace roman_numerals_net.Forms
         private int currentNumber = 0;
         private int score = 0;
 
-        public int GenerateNewNumber() => rng.Next(min, max);
+        int GenerateNewNumber() => rng.Next(min, max);
 
-        private int AddScore()
+        int AddScore()
         {
             score++;
             label_score.Text = $"{score}";
             return score;
         }
 
-        private void SetHelperMessage(string message = "", Color? color = null)
+        void SetHelperMessage(string message = "", Color? color = null)
         {
             label_message.ForeColor = color ?? Color.Blue;
             label_message.Text = message;
         }
 
-        private void SetRomanTxt(string romanStr = "", Color? color = null)
+        void SetRomanTxt(string romanStr = "", Color? color = null)
         {
             textBox_roman.Text = romanStr;
             textBox_roman.ForeColor = color ?? Color.Black;
         }
 
-        private void ResetRoman()
+        void ResetRoman()
         {
             SetRomanTxt(textBox_roman.Text);
             SetHelperMessage();
         }
 
-        private void AnswerIsRight()
+        void AnswerIsRight()
         {
             SetRomanTxt(textBox_roman.Text, Color.ForestGreen);
             SetHelperMessage("Congratulations!", Color.ForestGreen);
@@ -70,36 +79,36 @@ namespace roman_numerals_net.Forms
             AddScore();
         }
 
-        private void AnswerIsPartlyRight()
+        void AnswerIsPartlyRight()
         {
             SetRomanTxt(textBox_roman.Text, Color.Olive);
             SetHelperMessage("Almost! Now you need to format it correctly ", Color.Olive);
         }
 
-        private void AnswerIsWrong()
+        void AnswerIsWrong()
         {
             SetRomanTxt(textBox_roman.Text, Color.Red);
             SetHelperMessage("Try again", Color.Red);
         }
 
-        private void AnswerWithError(string error = "error")
+        void AnswerWithError(string error = "error")
         {
             SetRomanTxt(textBox_roman.Text, Color.MediumVioletRed);
             SetHelperMessage(error, Color.MediumVioletRed);
         }
 
-        private void SetNewNumber(int number)
+        void SetNewNumber(int number)
         {
             currentNumber = number;
             label_number.Text = currentNumber.ToString();
         }
 
-        private void PracticeForm_Load(object sender, EventArgs e)
+        void PracticeForm_Load(object s, EventArgs e)
         {
             btn_next.PerformClick();
         }
 
-        private void btn_next_Click(object sender, EventArgs e)
+        void btn_next_Click(object s, EventArgs e)
         {
             SetNewNumber(GenerateNewNumber());
             ResetRoman();
@@ -109,7 +118,7 @@ namespace roman_numerals_net.Forms
             textBox_roman.Focus();
         }
 
-        private void btn_check_Click(object sender, EventArgs e)
+        void btn_check_Click(object s, EventArgs e)
         {
             string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");
 

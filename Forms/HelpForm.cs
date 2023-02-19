@@ -18,7 +18,7 @@ namespace roman_numerals_net.Forms
             };
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void button1_Click(object s, EventArgs e)
         {
             this.Close();
         }
