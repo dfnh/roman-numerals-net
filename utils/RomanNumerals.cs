@@ -88,5 +88,24 @@ namespace roman_numerals_net
 
             return sum;
         }
+
+        public static string Clarify(int number)
+        {
+            if (number <= 0) return "";
+
+            var list = new List<int>();
+
+            foreach (var item in romanDictionary.Reverse())
+            {
+                if (number <= 0) break;
+                while (number >= item.Value)
+                {
+                    list.Add(item.Value);
+                    number -= item.Value;
+                }
+            }
+
+            return list.Count > 0 ? string.Join("+", list) : "";
+        }
     }
 }

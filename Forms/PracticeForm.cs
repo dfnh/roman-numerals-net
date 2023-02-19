@@ -33,6 +33,17 @@ namespace roman_numerals_net.Forms
                     CheckInput(null, null);
                 }
             };
+
+            HelpButton = true;
+            HelpButtonClicked += (s, e) =>
+            {
+                if (currentNumber > 0)
+                {
+                    MessageBox.Show($"{currentNumber} = {RomanNumerals.Clarify(currentNumber)}",
+                        "Clarification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                e.Cancel = true;
+            };
         }
 
         private readonly int min = 1;
