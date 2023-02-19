@@ -140,12 +140,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\roman_numeral_icon_138235.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\one %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\two.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

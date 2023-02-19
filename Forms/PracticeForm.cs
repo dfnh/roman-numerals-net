@@ -30,7 +30,7 @@ namespace roman_numerals_net.Forms
                 if (e.KeyValue == (char)Keys.Enter)
                 {
                     e.SuppressKeyPress = true; // to disable bing sound
-                    btn_check.PerformClick();
+                    CheckInput(null, null);
                 }
             };
         }
@@ -38,6 +38,11 @@ namespace roman_numerals_net.Forms
         private readonly int min = 1;
         private readonly int max = 4000;
         private readonly Random rng = new Random();
+        private readonly Color Black = Color.FromArgb(15, 23, 42);
+        private readonly Color Red = Color.FromArgb(225, 29, 72);
+        private readonly Color Yellow = Color.FromArgb(217, 119, 6);
+        private readonly Color Green = Color.FromArgb(101, 163, 13);
+        private readonly Color Purple = Color.FromArgb(192, 38, 211);
 
         private int currentNumber = 0;
         private int score = 0;
@@ -53,14 +58,14 @@ namespace roman_numerals_net.Forms
 
         void SetHelperMessage(string message = "", Color? color = null)
         {
-            label_message.ForeColor = color ?? Color.Blue;
+            label_message.ForeColor = color ?? Black;
             label_message.Text = message;
         }
 
         void SetRomanTxt(string romanStr = "", Color? color = null)
         {
             textBox_roman.Text = romanStr;
-            textBox_roman.ForeColor = color ?? Color.Black;
+            textBox_roman.ForeColor = color ?? Black;
         }
 
         void ResetRoman()
@@ -71,8 +76,8 @@ namespace roman_numerals_net.Forms
 
         void AnswerIsRight()
         {
-            SetRomanTxt(textBox_roman.Text, Color.ForestGreen);
-            SetHelperMessage("Congratulations!", Color.ForestGreen);
+            SetRomanTxt(textBox_roman.Text, Green);
+            SetHelperMessage("Congratulations!", Green);
 
             btn_check.Enabled = false;
             textBox_roman.Enabled = false;
@@ -81,20 +86,20 @@ namespace roman_numerals_net.Forms
 
         void AnswerIsPartlyRight()
         {
-            SetRomanTxt(textBox_roman.Text, Color.Olive);
-            SetHelperMessage("Almost! Now you need to format it correctly ", Color.Olive);
+            SetRomanTxt(textBox_roman.Text, Yellow);
+            SetHelperMessage("Almost! Now you need to format it correctly ", Yellow);
         }
 
         void AnswerIsWrong()
         {
-            SetRomanTxt(textBox_roman.Text, Color.Red);
-            SetHelperMessage("Try again", Color.Red);
+            SetRomanTxt(textBox_roman.Text, Red);
+            SetHelperMessage("Try again", Red);
         }
 
         void AnswerWithError(string error = "error")
         {
-            SetRomanTxt(textBox_roman.Text, Color.MediumVioletRed);
-            SetHelperMessage(error, Color.MediumVioletRed);
+            SetRomanTxt(textBox_roman.Text, Purple);
+            SetHelperMessage(error, Purple);
         }
 
         void SetNewNumber(int number)
@@ -105,10 +110,10 @@ namespace roman_numerals_net.Forms
 
         void PracticeForm_Load(object s, EventArgs e)
         {
-            btn_next.PerformClick();
+            GetNext(null, null);
         }
 
-        void btn_next_Click(object s, EventArgs e)
+        void GetNext(object s, EventArgs e)
         {
             SetNewNumber(GenerateNewNumber());
             ResetRoman();
@@ -118,7 +123,7 @@ namespace roman_numerals_net.Forms
             textBox_roman.Focus();
         }
 
-        void btn_check_Click(object s, EventArgs e)
+        void CheckInput(object s, EventArgs e)
         {
             string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");
 

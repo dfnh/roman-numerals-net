@@ -34,13 +34,13 @@
             this.label_message = new System.Windows.Forms.Label();
             this.textBox_roman = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_next = new System.Windows.Forms.Button();
-            this.btn_check = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_number = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label_score = new System.Windows.Forms.Label();
+            this.btn_check = new roman_numerals_net.utils.RoundedButton();
+            this.btn_next = new roman_numerals_net.utils.RoundedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // 
             // label_message
             // 
-            this.label_message.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.label_message.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(38)))), ((int)(((byte)(211)))));
             this.label_message.Location = new System.Drawing.Point(12, 276);
             this.label_message.Name = "label_message";
             this.label_message.Size = new System.Drawing.Size(418, 23);
@@ -76,7 +76,9 @@
             // 
             // textBox_roman
             // 
+            this.textBox_roman.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.textBox_roman.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_roman.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.textBox_roman.Location = new System.Drawing.Point(12, 242);
             this.textBox_roman.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_roman.Name = "textBox_roman";
@@ -92,26 +94,6 @@
             this.label3.Size = new System.Drawing.Size(142, 23);
             this.label3.TabIndex = 9;
             this.label3.Text = "Roman Numerals";
-            // 
-            // btn_next
-            // 
-            this.btn_next.Location = new System.Drawing.Point(241, 323);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(112, 43);
-            this.btn_next.TabIndex = 12;
-            this.btn_next.Text = "Next";
-            this.btn_next.UseVisualStyleBackColor = true;
-            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
-            // 
-            // btn_check
-            // 
-            this.btn_check.Location = new System.Drawing.Point(99, 323);
-            this.btn_check.Name = "btn_check";
-            this.btn_check.Size = new System.Drawing.Size(112, 43);
-            this.btn_check.TabIndex = 13;
-            this.btn_check.Text = "Check";
-            this.btn_check.UseVisualStyleBackColor = true;
-            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -176,14 +158,49 @@
             this.label_score.Text = "score here";
             this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btn_check
+            // 
+            this.btn_check.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.btn_check.BorderRadius = 16;
+            this.btn_check.FlatAppearance.BorderSize = 0;
+            this.btn_check.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.btn_check.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.btn_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_check.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btn_check.Location = new System.Drawing.Point(99, 323);
+            this.btn_check.Name = "btn_check";
+            this.btn_check.Size = new System.Drawing.Size(112, 43);
+            this.btn_check.TabIndex = 16;
+            this.btn_check.Text = "Check";
+            this.btn_check.UseVisualStyleBackColor = false;
+            this.btn_check.Click += new System.EventHandler(this.CheckInput);
+            // 
+            // btn_next
+            // 
+            this.btn_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.btn_next.BorderRadius = 16;
+            this.btn_next.FlatAppearance.BorderSize = 0;
+            this.btn_next.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.btn_next.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btn_next.Location = new System.Drawing.Point(241, 323);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(112, 43);
+            this.btn_next.TabIndex = 15;
+            this.btn_next.Text = "Next";
+            this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.GetNext);
+            // 
             // PracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(227)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(452, 378);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btn_check);
             this.Controls.Add(this.btn_next);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_message);
             this.Controls.Add(this.textBox_roman);
             this.Controls.Add(this.label3);
@@ -191,6 +208,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -218,12 +236,12 @@
         private System.Windows.Forms.Label label_message;
         private System.Windows.Forms.TextBox textBox_roman;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_next;
-        private System.Windows.Forms.Button btn_check;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_number;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_score;
+        private utils.RoundedButton btn_next;
+        private utils.RoundedButton btn_check;
     }
 }

@@ -18,7 +18,7 @@ namespace roman_numerals_net
                 if (e.KeyValue == (char)Keys.Enter)
                 {
                     e.SuppressKeyPress = true; // to disable bing sound
-                    button1.PerformClick();
+                    ConvertNumbers(null, null);
                 }
             };
 
@@ -40,7 +40,7 @@ namespace roman_numerals_net
             textBox_roman.Focus();
         }
 
-        void button1_Click(object s, EventArgs e)
+        void ConvertNumbers(object s, EventArgs e)
         {
             // converting
             string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");

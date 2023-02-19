@@ -63,26 +63,6 @@ namespace roman_numerals_net.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
-        internal static System.Drawing.Icon one11 {
-            get {
-                object obj = ResourceManager.GetObject("one11", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
-        internal static System.Drawing.Icon roman_numeral_icon_138235 {
-            get {
-                object obj = ResourceManager.GetObject("roman_numeral_icon_138235", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
         internal static System.Drawing.Icon two {
             get {
                 object obj = ResourceManager.GetObject("two", resourceCulture);

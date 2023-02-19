@@ -8,7 +8,7 @@ namespace roman_numerals_net.Forms
         public HelpForm()
         {
             InitializeComponent();
-            CancelButton = button1;
+            CancelButton = btn_close;
 
             HelpButton = true;
             HelpButtonClicked += (s, e) =>
@@ -18,7 +18,7 @@ namespace roman_numerals_net.Forms
             };
         }
 
-        void button1_Click(object s, EventArgs e)
+        void CloseForm(object s, EventArgs e)
         {
             this.Close();
         }
