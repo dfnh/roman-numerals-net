@@ -19,7 +19,7 @@ namespace roman_numerals_net.Forms
             KeyPreview = true;
             KeyDown += (s, e) =>
             {
-                ResetRoman();
+                ClearColors();
                 if (e.KeyValue == (char)Keys.Enter)
                 {
                     e.SuppressKeyPress = true; // to disable bing sound
@@ -30,11 +30,11 @@ namespace roman_numerals_net.Forms
             HelpButton = true;
             HelpButtonClicked += (s, e) =>
             {
-                HelpButtonHelper(e, $"{currentNumber} = {RomanNumerals.Clarify(currentNumber)}");
+                HelpButtonHelper(e, RomanNumerals.Clarify(currentNumber, false));
             };
         }
 
-        void ResetRoman()
+        void ClearColors()
         {
             ClearColors(textBox_roman, label_message);
         }

@@ -93,28 +93,8 @@ namespace roman_numerals_net
             return sum;
         }
 
-        public static string Clarify(int number)
-        {
-            if (number <= 0) return "";
-
-            var list = new List<int>();
-
-            foreach (var item in romanDictionary.Reverse())
-            {
-                if (number <= 0) break;
-                while (number >= item.Value)
-                {
-                    list.Add(item.Value);
-                    number -= item.Value;
-                }
-            }
-
-            return list.Count > 0 ? string.Join("+", list) : "";
-        }
-
         public static string Clarify(int number, bool roman)
         {
-            if (!roman) return Clarify(number);
             if (number <= 0) return "";
 
             var list = new List<KeyValuePair<string, int>>();
@@ -129,8 +109,10 @@ namespace roman_numerals_net
                 }
             }
 
-            return $"{string.Concat(list.Select(x => x.Key))} = {string.Join("+", list.Select(x => x.Key))}\r\n"
-                + $"{string.Join("\r\n", list.Distinct().Select(x => $"{x.Key} = {x.Value}"))}";
+            return (roman
+                ? $"{string.Concat(list.Select(x => x.Key))} = {string.Join("+", list.Select(x => x.Key))}"
+                : $"{list.Sum(x => x.Value)} = {string.Join("+", list.Select(x => x.Value))}")
+                + $"\r\n{string.Join("\r\n", list.Distinct().Select(x => $"{x.Key} = {x.Value}"))}";
         }
     }
 }

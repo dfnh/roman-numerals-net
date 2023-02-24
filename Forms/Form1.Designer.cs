@@ -65,6 +65,8 @@
             // 
             // textBox_roman
             // 
+            this.textBox_roman.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_roman.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_roman.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.textBox_roman.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_roman.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
@@ -83,14 +85,14 @@
             this.practiceToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(582, 30);
             this.menuStrip1.TabIndex = 5;
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
             this.helpToolStripMenuItem.Text = "help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -101,7 +103,7 @@
             this.romanToArabicToolStripMenuItem});
             this.practiceToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.practiceToolStripMenuItem.Text = "practice";
             // 
             // arabicToRomanToolStripMenuItem
@@ -109,7 +111,7 @@
             this.arabicToRomanToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.arabicToRomanToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.arabicToRomanToolStripMenuItem.Name = "arabicToRomanToolStripMenuItem";
-            this.arabicToRomanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.arabicToRomanToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.arabicToRomanToolStripMenuItem.Text = "arabic to roman";
             this.arabicToRomanToolStripMenuItem.Click += new System.EventHandler(this.PracticeToRoman);
             // 
@@ -118,7 +120,7 @@
             this.romanToArabicToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
             this.romanToArabicToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.romanToArabicToolStripMenuItem.Name = "romanToArabicToolStripMenuItem";
-            this.romanToArabicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.romanToArabicToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.romanToArabicToolStripMenuItem.Text = "roman to arabic";
             this.romanToArabicToolStripMenuItem.Click += new System.EventHandler(this.PracticeToArabic);
             // 

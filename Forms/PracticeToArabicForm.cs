@@ -30,7 +30,7 @@ namespace roman_numerals_net.Forms
             HelpButton = true;
             HelpButtonClicked += (s, e) =>
             {
-                HelpButtonHelper(e, $"{RomanNumerals.Clarify(currentNumber, true)}");
+                HelpButtonHelper(e, RomanNumerals.Clarify(currentNumber, true));
             };
         }
 
