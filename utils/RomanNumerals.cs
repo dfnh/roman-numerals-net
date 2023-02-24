@@ -107,5 +107,26 @@ namespace roman_numerals_net
 
             return list.Count > 0 ? string.Join("+", list) : "";
         }
+
+        public static string Clarify(int number, bool roman)
+        {
+            if (!roman) return Clarify(number);
+            if (number <= 0) return "";
+
+            var list = new List<KeyValuePair<string, int>>();
+
+            foreach (var item in romanDictionary.Reverse())
+            {
+                if (number <= 0) break;
+                while (number >= item.Value)
+                {
+                    list.Add(item);
+                    number -= item.Value;
+                }
+            }
+
+            return $"{string.Concat(list.Select(x => x.Key))} = {string.Join("+", list.Select(x => x.Key))}\r\n"
+                + $"{string.Join("\r\n", list.Distinct().Select(x => $"{x.Key} = {x.Value}"))}";
+        }
     }
 }
