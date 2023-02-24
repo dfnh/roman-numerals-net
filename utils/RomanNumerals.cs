@@ -48,6 +48,10 @@ namespace roman_numerals_net
 
         public static string ToRoman(int number)
         {
+            if (number < 0 || number >= 4000)
+            {
+                throw new ArgumentException("Number must be between 0 and 3999");
+            }
             var result = new StringBuilder();
 
             foreach (var item in romanDictionary.Reverse())
