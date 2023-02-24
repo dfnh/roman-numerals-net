@@ -1,6 +1,6 @@
 ﻿namespace roman_numerals_net.Forms
 {
-    partial class PracticeForm
+    partial class PracticeToRomanForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeToRomanForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_message = new System.Windows.Forms.Label();
@@ -192,7 +192,7 @@
             this.btn_next.UseVisualStyleBackColor = false;
             this.btn_next.Click += new System.EventHandler(this.GetNext);
             // 
-            // PracticeForm
+            // PracticeToRomanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,11 +218,11 @@
             this.MaximumSize = new System.Drawing.Size(470, 420);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(470, 420);
-            this.Name = "PracticeForm";
+            this.Name = "PracticeToRomanForm";
             this.Opacity = 0.99D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Practice";
+            this.Text = "Practice To Roman";
             this.Load += new System.EventHandler(this.PracticeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

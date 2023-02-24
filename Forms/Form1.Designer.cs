@@ -35,6 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.practiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arabicToRomanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.romanToArabicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox_result = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_error = new System.Windows.Forms.Label();
@@ -94,11 +96,31 @@
             // 
             // practiceToolStripMenuItem
             // 
+            this.practiceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arabicToRomanToolStripMenuItem,
+            this.romanToArabicToolStripMenuItem});
             this.practiceToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
             this.practiceToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.practiceToolStripMenuItem.Text = "practice";
-            this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
+            // 
+            // arabicToRomanToolStripMenuItem
+            // 
+            this.arabicToRomanToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.arabicToRomanToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.arabicToRomanToolStripMenuItem.Name = "arabicToRomanToolStripMenuItem";
+            this.arabicToRomanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.arabicToRomanToolStripMenuItem.Text = "arabic to roman";
+            this.arabicToRomanToolStripMenuItem.Click += new System.EventHandler(this.arabicToRomanToolStripMenuItem_Click);
+            // 
+            // romanToArabicToolStripMenuItem
+            // 
+            this.romanToArabicToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.romanToArabicToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.romanToArabicToolStripMenuItem.Name = "romanToArabicToolStripMenuItem";
+            this.romanToArabicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.romanToArabicToolStripMenuItem.Text = "roman to arabic";
+            this.romanToArabicToolStripMenuItem.Click += new System.EventHandler(this.romanToArabicToolStripMenuItem_Click);
             // 
             // textBox_result
             // 
@@ -195,6 +217,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_error;
         private utils.RoundedButton btn_convert;
+        private System.Windows.Forms.ToolStripMenuItem arabicToRomanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem romanToArabicToolStripMenuItem;
     }
 }
 

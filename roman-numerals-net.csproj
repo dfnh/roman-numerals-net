@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\PracticeToArabicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracticeToArabicForm.Designer.cs">
+      <DependentUpon>PracticeToArabicForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="utils\Ext.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -82,14 +88,17 @@
     <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PracticeForm.cs">
+    <Compile Include="Forms\PracticeToRomanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PracticeForm.Designer.cs">
-      <DependentUpon>PracticeForm.cs</DependentUpon>
+    <Compile Include="Forms\PracticeToRomanForm.Designer.cs">
+      <DependentUpon>PracticeToRomanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\PracticeBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="utils\RomanNumerals.cs" />
     <Compile Include="utils\RoundedButton.cs">
       <SubType>Component</SubType>
@@ -100,8 +109,11 @@
     <EmbeddedResource Include="Forms\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeForm.resx">
-      <DependentUpon>PracticeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PracticeToArabicForm.resx">
+      <DependentUpon>PracticeToArabicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeToRomanForm.resx">
+      <DependentUpon>PracticeToRomanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
