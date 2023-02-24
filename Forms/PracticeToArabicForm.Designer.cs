@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label_score = new System.Windows.Forms.Label();
             this.label_message = new System.Windows.Forms.Label();
-            this.textBox_roman = new System.Windows.Forms.TextBox();
+            this.textBox_arabic = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,16 +116,16 @@
             this.label_message.TabIndex = 21;
             this.label_message.Text = "Message here";
             // 
-            // textBox_roman
+            // textBox_arabic
             // 
-            this.textBox_roman.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.textBox_roman.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_roman.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.textBox_roman.Location = new System.Drawing.Point(12, 242);
-            this.textBox_roman.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_roman.Name = "textBox_roman";
-            this.textBox_roman.Size = new System.Drawing.Size(418, 30);
-            this.textBox_roman.TabIndex = 20;
+            this.textBox_arabic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.textBox_arabic.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_arabic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.textBox_arabic.Location = new System.Drawing.Point(12, 242);
+            this.textBox_arabic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_arabic.Name = "textBox_arabic";
+            this.textBox_arabic.Size = new System.Drawing.Size(418, 30);
+            this.textBox_arabic.TabIndex = 20;
             // 
             // label3
             // 
@@ -173,7 +173,7 @@
             this.btn_check.TabIndex = 24;
             this.btn_check.Text = "Check";
             this.btn_check.UseVisualStyleBackColor = false;
-            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
+            this.btn_check.Click += new System.EventHandler(this.CheckInput);
             // 
             // btn_next
             // 
@@ -190,7 +190,7 @@
             this.btn_next.TabIndex = 23;
             this.btn_next.Text = "Next";
             this.btn_next.UseVisualStyleBackColor = false;
-            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            this.btn_next.Click += new System.EventHandler(this.GetNext);
             // 
             // PracticeToArabicForm
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_message);
-            this.Controls.Add(this.textBox_roman);
+            this.Controls.Add(this.textBox_arabic);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_score;
         private System.Windows.Forms.Label label_message;
-        private System.Windows.Forms.TextBox textBox_roman;
+        private System.Windows.Forms.TextBox textBox_arabic;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

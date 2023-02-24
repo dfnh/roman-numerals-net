@@ -41,90 +41,100 @@ namespace roman_numerals_net.utils
             label_message.Text = message;
         }
 
-        protected void SetRomanTxt(TextBox textBox_roman, string romanStr = "", Color? color = null)
+        protected void SetMainTextBox(TextBox textBox_main, string romanStr = "", Color? color = null)
         {
-            textBox_roman.Text = romanStr;
-            textBox_roman.ForeColor = color ?? Black;
+            textBox_main.Text = romanStr;
+            textBox_main.ForeColor = color ?? Black;
         }
 
-        protected void ResetRoman(TextBox textBox_roman, Label label_message)
+        protected void ClearColors(TextBox textBox_main, Label label_message)
         {
-            SetRomanTxt(textBox_roman, textBox_roman.Text);
+            SetMainTextBox(textBox_main, textBox_main.Text);
             SetHelperMessage(label_message);
         }
 
-        protected void AnswerIsRight(TextBox textBox_roman, Label label_message, Button btn_check, Label label_score)
+        protected void AnswerIsRight(TextBox textBox_main, Label label_message, Button btn_check, Label label_score)
         {
-            SetRomanTxt(textBox_roman, textBox_roman.Text, Green);
+            SetMainTextBox(textBox_main, textBox_main.Text, Green);
             SetHelperMessage(label_message, "Congratulations!", Green);
 
-            btn_check.Enabled = false;
-            textBox_roman.Enabled = false;
+            DisableAllAfterIsRight(textBox_main, btn_check);
             AddScore(label_score);
         }
 
-        protected void AnswerIsPartlyRight(TextBox textBox_roman, Label label_message)
+        protected void DisableAllAfterIsRight(TextBox textBox_main, Button btn_check)
         {
-            SetRomanTxt(textBox_roman, textBox_roman.Text, Yellow);
+            btn_check.Enabled = false;
+            textBox_main.Enabled = false;
+        }
+
+        protected void AnswerIsPartlyRight(TextBox textBox_main, Label label_message)
+        {
+            SetMainTextBox(textBox_main, textBox_main.Text, Yellow);
             SetHelperMessage(label_message, "Almost! Now you need to format it correctly ", Yellow);
         }
 
-        protected void AnswerIsWrong(TextBox textBox_roman, Label label_message)
+        protected void AnswerIsWrong(TextBox textBox_main, Label label_message)
         {
-            SetRomanTxt(textBox_roman, textBox_roman.Text, Red);
+            SetMainTextBox(textBox_main, textBox_main.Text, Red);
             SetHelperMessage(label_message, "Try again", Red);
         }
 
-        protected void AnswerWithError(TextBox textBox_roman, Label label_message, string error = "error")
+        protected void AnswerWithError(TextBox textBox_main, Label label_message, string error = "error")
         {
-            SetRomanTxt(textBox_roman, textBox_roman.Text, Purple);
+            SetMainTextBox(textBox_main, textBox_main.Text, Purple);
             SetHelperMessage(label_message, error, Purple);
         }
 
-        protected void SetNewNumber(Label label_number, int number)
+        protected virtual void SetNewNumber(Label label_main, int number)
         {
             currentNumber = number;
-            label_number.Text = currentNumber.ToString();
+            label_main.Text = currentNumber.ToString();
         }
 
-        protected void GetNext(Label label_number, TextBox textBox_roman, Label label_message, Button btn_check)
+        protected virtual void GetNext(Label label_main, TextBox textBox_main, Label label_message, Button btn_check)
         {
-            SetNewNumber(label_number, GenerateNewNumber());
-            ResetRoman(textBox_roman, label_message);
+            SetNewNumber(label_main, GenerateNewNumber());
+            ClearColors(textBox_main, label_message);
 
-            textBox_roman.Enabled = true;
+            EnableAllAfterGetNext(textBox_main, btn_check);
+        }
+
+        protected void EnableAllAfterGetNext(TextBox textBox_main, Button btn_check)
+        {
+            textBox_main.Enabled = true;
             btn_check.Enabled = true;
-            textBox_roman.Focus();
+            textBox_main.Focus();
         }
 
-        protected virtual void CheckInput(TextBox textBox_roman, Label label_message, Button btn_check, Label label_score)
+        protected virtual void CheckInput(TextBox textBox_main, Label label_message, Button btn_check, Label label_score)
         {
-            string romanStr = textBox_roman.Text.ToUpper().Replace(" ", "");
+            string romanStr = textBox_main.Text.ToUpper().Replace(" ", "");
 
             var (success, number, errorMessage) = RomanNumerals.ToIntSafe(romanStr);
 
             if (!success)
             {
-                AnswerWithError(textBox_roman, label_message, errorMessage);
+                AnswerWithError(textBox_main, label_message, errorMessage);
                 return;
             }
 
             if (currentNumber != number)
             {
-                AnswerIsWrong(textBox_roman, label_message);
+                AnswerIsWrong(textBox_main, label_message);
                 return;
             }
 
             string correctRoman = RomanNumerals.ToRoman(number);
             if (correctRoman != romanStr)
             {
-                SetRomanTxt(textBox_roman, romanStr);
-                AnswerIsPartlyRight(textBox_roman, label_message);
+                SetMainTextBox(textBox_main, romanStr);
+                AnswerIsPartlyRight(textBox_main, label_message);
                 return;
             }
 
-            SetRomanTxt(textBox_roman, romanStr);
-            AnswerIsRight(textBox_roman, label_message, btn_check, label_score);
+            SetMainTextBox(textBox_main, romanStr);
+            AnswerIsRight(textBox_main, label_message, btn_check, label_score);
         }
     }
 }
