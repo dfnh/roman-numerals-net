@@ -64,12 +64,12 @@ namespace roman_numerals_net
             Ext.OpenOnlyOneForm<HelpForm>();
         }
 
-        void arabicToRomanToolStripMenuItem_Click(object sender, EventArgs e)
+        void PracticeToRoman(object sender, EventArgs e)
         {
             Ext.OpenOnlyOneForm<PracticeToRomanForm>();
         }
 
-        void romanToArabicToolStripMenuItem_Click(object sender, EventArgs e)
+        void PracticeToArabic(object sender, EventArgs e)
         {
             Ext.OpenOnlyOneForm<PracticeToArabicForm>();
         }

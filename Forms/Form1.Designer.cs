@@ -111,7 +111,7 @@
             this.arabicToRomanToolStripMenuItem.Name = "arabicToRomanToolStripMenuItem";
             this.arabicToRomanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.arabicToRomanToolStripMenuItem.Text = "arabic to roman";
-            this.arabicToRomanToolStripMenuItem.Click += new System.EventHandler(this.arabicToRomanToolStripMenuItem_Click);
+            this.arabicToRomanToolStripMenuItem.Click += new System.EventHandler(this.PracticeToRoman);
             // 
             // romanToArabicToolStripMenuItem
             // 
@@ -120,7 +120,7 @@
             this.romanToArabicToolStripMenuItem.Name = "romanToArabicToolStripMenuItem";
             this.romanToArabicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.romanToArabicToolStripMenuItem.Text = "roman to arabic";
-            this.romanToArabicToolStripMenuItem.Click += new System.EventHandler(this.romanToArabicToolStripMenuItem_Click);
+            this.romanToArabicToolStripMenuItem.Click += new System.EventHandler(this.PracticeToArabic);
             // 
             // textBox_result
             // 

@@ -9,9 +9,8 @@ namespace roman_numerals_net
     {
         private static readonly Dictionary<string, int> romanDictionary = new Dictionary<string, int>()
             {
-                { "I", 1 }, { "IV", 4 }, { "V", 5 }, { "IX", 9 },
-                { "X", 10 }, { "XL", 40 }, { "L", 50 }, { "XC", 90 },
-                { "C", 100 }, { "CD", 400 }, { "D", 500  }, { "CM", 900 }, { "M", 1000 },
+                { "I", 1 }, { "IV", 4 }, { "V", 5 }, { "IX", 9 }, { "X", 10 }, { "XL", 40 }, { "L", 50 },
+                { "XC", 90 },{ "C", 100 }, { "CD", 400 }, { "D", 500  }, { "CM", 900 }, { "M", 1000 },
             };
 
         public static Dictionary<string, int> GetDictionary()
@@ -83,6 +82,11 @@ namespace roman_numerals_net
                     continue;
                 }
                 sum += number;
+
+                if (sum >= 4000)
+                {
+                    throw new ArgumentException($"Arabic numeral must be less than 3999");
+                }
             }
             if (sum < 0) throw new Exception("sum cant be negative! wrong string ");
 
