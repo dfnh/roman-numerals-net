@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using roman_numerals_net.utils;
 
@@ -37,12 +30,7 @@ namespace roman_numerals_net.Forms
             HelpButton = true;
             HelpButtonClicked += (s, e) =>
             {
-                if (currentNumber > 0)
-                {
-                    MessageBox.Show($"{RomanNumerals.Clarify(currentNumber, true)}",
-                        "Clarification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                e.Cancel = true;
+                HelpButtonHelper(e, $"{RomanNumerals.Clarify(currentNumber, true)}");
             };
         }
 

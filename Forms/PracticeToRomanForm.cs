@@ -31,12 +31,7 @@ namespace roman_numerals_net.Forms
             HelpButton = true;
             HelpButtonClicked += (s, e) =>
             {
-                if (currentNumber > 0)
-                {
-                    MessageBox.Show($"{currentNumber} = {RomanNumerals.Clarify(currentNumber)}",
-                        "Clarification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                e.Cancel = true;
+                HelpButtonHelper(e, $"{currentNumber} = {RomanNumerals.Clarify(currentNumber)}");
             };
         }
 

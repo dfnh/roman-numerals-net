@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -26,6 +27,14 @@ namespace roman_numerals_net.utils
             btn_exit.Click += (s, e) => Close();
             form.Controls.Add(btn_exit);
             form.CancelButton = btn_exit;
+        }
+
+        protected void HelpButtonHelper(CancelEventArgs e, string str)
+        {
+            e.Cancel = true;
+            if (currentNumber <= 0) return;
+
+            MessageBox.Show(str, "Clarification", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         protected int AddScore(Label label_score)
