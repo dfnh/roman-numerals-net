@@ -62,8 +62,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(428, 49);
             this.label2.TabIndex = 1;
-            this.label2.Text = "You\'ll be given a random number in Arabic numerals and you should try to write it" +
-    "\'s equivalent in Roman numerals";
+            this.label2.Text = "You will be given a number in Arabic numerals, and your task is to convert it to " +
+    "its equivalent in Roman numerals.";
             // 
             // label_message
             // 

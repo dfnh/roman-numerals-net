@@ -146,8 +146,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(428, 49);
             this.label2.TabIndex = 18;
-            this.label2.Text = "You\'ll be given a random number in Roman numerals and you should try to write it\'" +
-    "s equivalent in Arabic numerals";
+            this.label2.Text = "You will be given a number in Roman numerals, and your task is to convert it to i" +
+    "ts equivalent in Arabic numerals.";
             // 
             // label1
             // 
