@@ -4,6 +4,7 @@ namespace roman_numerals_net.Tests
     public class ArabicToRomanTests
     {
         [Test]
+        [Category("InRange")]
         public void ArabicToRoman_ValidInput_ReturnsCorrectResult()
         {
             // Arrange
@@ -18,36 +19,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
-        public void ArabicToRoman_LessThanZero_ThrowsArgumentException()
-        {
-            // Arrange
-            int input = -320;
-
-            // Act & Assert
-            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToRoman(input));
-        }
-
-        [Test]
-        public void ArabicToRoman_MoreThanMax_ThrowsArgumentException()
-        {
-            // Arrange
-            int input = 1400999;
-
-            // Act & Assert
-            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToRoman(input));
-        }
-
-        [Test]
-        public void ArabicToRoman_NullInput_ReturnsEmptyString()
-        {
-            // Arrange
-            int input = 0;
-
-            // Act & Assert
-            Assert.IsEmpty(RomanNumerals.ToRoman(input));
-        }
-
-        [Test]
+        [Category("InRange")]
         public void ArabicToRoman_LowerBoundary_ReturnsI()
         {
             // Arrange
@@ -62,20 +34,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
-        public void ArabicToRoman_UpperBoundary_ReturnsMMMCMXCIX()
-        {
-            // Arrange
-            int input = 3999;
-            string expectedOutput = "MMMCMXCIX";
-
-            // Act
-            string result = RomanNumerals.ToRoman(input);
-
-            // Assert
-            Assert.That(result, Is.EqualTo(expectedOutput));
-        }
-
-        [Test]
+        [Category("InRange")]
         public void ArabicToRoman_EdgeCase_ReturnsCDXLIX()
         {
             // Arrange
@@ -90,6 +49,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void ArabicToRoman_EdgeCase_ReturnsXCIX()
         {
             // Arrange
@@ -104,6 +64,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void ArabicToRoman_EdgeCase_ReturnsMCMXCIX()
         {
             // Arrange
@@ -118,11 +79,60 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void ArabicToRoman_EdgeCase_ReturnsCMXCIX()
         {
             // Arrange
             int input = 999;
             string expectedOutput = "CMXCIX";
+
+            // Act
+            string result = RomanNumerals.ToRoman(input);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedOutput));
+        }
+
+        [Test]
+        [Category("OutOfRange")]
+        public void ArabicToRoman_LessThanZero_ThrowsArgumentException()
+        {
+            // Arrange
+            int input = -320;
+
+            // Act & Assert
+            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToRoman(input));
+        }
+
+        [Test]
+        [Category("OutOfRange")]
+        public void ArabicToRoman_MoreThanMax_ThrowsArgumentException()
+        {
+            // Arrange
+            int input = 1400999;
+
+            // Act & Assert
+            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToRoman(input));
+        }
+
+        [Test]
+        [Category("EdgeOfRange")]
+        public void ArabicToRoman_NullInput_ReturnsEmptyString()
+        {
+            // Arrange
+            int input = 0;
+
+            // Act & Assert
+            Assert.IsEmpty(RomanNumerals.ToRoman(input));
+        }
+
+        [Test]
+        [Category("EdgeOfRange")]
+        public void ArabicToRoman_UpperBoundary_ReturnsMMMCMXCIX()
+        {
+            // Arrange
+            int input = 3999;
+            string expectedOutput = "MMMCMXCIX";
 
             // Act
             string result = RomanNumerals.ToRoman(input);
@@ -136,6 +146,7 @@ namespace roman_numerals_net.Tests
     public class RomanToArabicTests
     {
         [Test]
+        [Category("InRange")]
         public void RomanToArabic_ValidInput_ReturnsCorrectResult()
         {
             // Arrange
@@ -150,39 +161,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
-        public void RomanToArabic_NullInput_ReturnsZero()
-        {
-            // Arrange
-            string input = "";
-
-            // Act
-            int result = RomanNumerals.ToInt(input);
-
-            // Assert
-            Assert.That(result, Is.EqualTo(0));
-        }
-
-        [Test]
-        public void RomanToArabic_MoreThanMax_ThrowsArgumentException()
-        {
-            // Arrange
-            string input = "MMMMM";
-
-            // Act & Assert
-            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToInt(input));
-        }
-
-        [Test]
-        public void RomanToArabic_InvalidInput_ThrowsArgumentException()
-        {
-            // Arrange
-            string input = "ZXC";
-
-            // Act & Assert
-            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToInt(input));
-        }
-
-        [Test]
+        [Category("InRange")]
         public void RomanToArabic_LowerBoundary_Returns1()
         {
             // Arrange
@@ -197,20 +176,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
-        public void RomanToArabic_UpperBoundary_Returns3999()
-        {
-            // Arrange
-            string input = "MMMCMXCIX";
-            int expectedOutput = 3999;
-
-            // Act
-            int result = RomanNumerals.ToInt(input);
-
-            // Assert
-            Assert.That(result, Is.EqualTo(expectedOutput));
-        }
-
-        [Test]
+        [Category("InRange")]
         public void RomanToArabic_EdgeCase_Returns449()
         {
             // Arrange
@@ -225,6 +191,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void RomanToArabic_EdgeCase_Returns99()
         {
             // Arrange
@@ -239,6 +206,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void RomanToArabic_EdgeCase_Returns1999()
         {
             // Arrange
@@ -253,6 +221,7 @@ namespace roman_numerals_net.Tests
         }
 
         [Test]
+        [Category("InRange")]
         public void RomanToArabic_EdgeCase_Returns999()
         {
             // Arrange
@@ -264,6 +233,57 @@ namespace roman_numerals_net.Tests
 
             // Assert
             Assert.That(result, Is.EqualTo(expectedOutput));
+        }
+
+        [Test]
+        [Category("OutOfRange")]
+        public void RomanToArabic_MoreThanMax_ThrowsArgumentException()
+        {
+            // Arrange
+            string input = "MMMMM";
+
+            // Act & Assert
+            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToInt(input));
+        }
+
+        [Test]
+        [Category("OutOfRange")]
+        public void RomanToArabic_InvalidInput_ThrowsArgumentException()
+        {
+            // Arrange
+            string input = "ZXC";
+
+            // Act & Assert
+            Assert.Throws<System.ArgumentException>(() => RomanNumerals.ToInt(input));
+        }
+
+        [Test]
+        [Category("EdgeOfRange")]
+        public void RomanToArabic_UpperBoundary_Returns3999()
+        {
+            // Arrange
+            string input = "MMMCMXCIX";
+            int expectedOutput = 3999;
+
+            // Act
+            int result = RomanNumerals.ToInt(input);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedOutput));
+        }
+
+        [Test]
+        [Category("EdgeOfRange")]
+        public void RomanToArabic_NullInput_ReturnsZero()
+        {
+            // Arrange
+            string input = "";
+
+            // Act
+            int result = RomanNumerals.ToInt(input);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(0));
         }
     }
 }
